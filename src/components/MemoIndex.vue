@@ -22,7 +22,6 @@ const memos = computed(() => {
         </span>
       </li>
     </ul>
-    <RouterLink :to="{ name: 'MemoNew' }"><button>新規作成</button></RouterLink>
   </main>
 </template>
 
