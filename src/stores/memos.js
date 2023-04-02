@@ -2,7 +2,6 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useMemosStore = defineStore('memos', () => {
-  // const editingContent = ref("")
   class Memo {
     constructor(id, content) {
       this.id = id
