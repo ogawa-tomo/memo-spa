@@ -1,5 +1,5 @@
 <script setup>
-import MemoIndex from '@/components/MemoIndex.vue'
+import MemoList from '@/components/MemoList.vue'
 import MemoForm from '../components/MemoForm.vue'
 
 const props = defineProps({ id: Number })
@@ -7,7 +7,7 @@ const props = defineProps({ id: Number })
 
 <template>
   <main class="flex">
-    <MemoIndex />
+    <MemoList />
     <MemoForm :id="props.id" />
   </main>
   <RouterLink :to="{ name: 'AppTop' }">トップに戻る</RouterLink><br />

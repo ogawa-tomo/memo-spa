@@ -1,9 +1,9 @@
 <script setup>
-import MemoIndex from '@/components/MemoIndex.vue'
+import MemoList from '@/components/MemoList.vue'
 </script>
 
 <template>
   <div class="flex">
-    <MemoIndex />
+    <MemoList />
   </div>
 </template>
