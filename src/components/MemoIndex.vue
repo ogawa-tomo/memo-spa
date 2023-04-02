@@ -11,7 +11,6 @@ const memos = computed(() => {
 
 <template>
   <main>
-    <p v-if="memos.length === 0">メモは登録されていません。</p>
     <ul>
       <li v-for="memo in memos" :key="memo.id">
         <span v-if="memo.editing">{{ memo.firstLine }}</span>
