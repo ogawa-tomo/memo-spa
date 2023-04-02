@@ -1,6 +1,6 @@
 <script setup>
 import MemoIndex from '@/components/MemoIndex.vue'
-import MemoEditForm from '../components/MemoEditForm.vue'
+import MemoForm from '../components/MemoForm.vue'
 </script>
 
 <template>
@@ -8,7 +8,7 @@ import MemoEditForm from '../components/MemoEditForm.vue'
   メモ新規作成画面<br />
   <br />
   <MemoIndex /><br />
-  <MemoEditForm /><br />
+  <MemoForm /><br />
   <br />
   <RouterLink :to="{ name: 'AppTop' }">トップに戻る</RouterLink><br />
 </template>

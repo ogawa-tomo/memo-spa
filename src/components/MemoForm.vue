@@ -12,7 +12,7 @@ const onUpdate = () => {
 </script>
 
 <template>
-  MemoEditForm.vue<br />
+  MemoForm.vue<br />
   <span v-if="props.id">id{{ props.id }}のメモ編集コンポーネント</span>
   <span v-else>メモ作成コンポーネント</span><br />
   <form @submit.prevent="onUpdate">
