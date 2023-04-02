@@ -6,9 +6,9 @@ const props = defineProps({ id: Number })
 </script>
 
 <template>
-  <div class="flex">
+  <main class="flex">
     <MemoIndex />
     <MemoForm :id="props.id" />
-  </div>
+  </main>
   <RouterLink :to="{ name: 'AppTop' }">トップに戻る</RouterLink><br />
 </template>

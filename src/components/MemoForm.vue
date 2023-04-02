@@ -30,13 +30,11 @@ onBeforeUnmount(() => {
 
 <template>
   <main>
-    <form @submit.prevent="onUpdate">
-      <textarea v-model="content"></textarea>
-      <button>登録</button>
-    </form>
-    <div v-if="props.id">
+    <textarea v-model="content"></textarea>
+    <button @click="onUpdate">登録</button>
+    <span v-if="props.id">
       <button @click="onRemove">削除</button>
-    </div>
+    </span>
   </main>
 </template>
 
