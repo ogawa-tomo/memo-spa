@@ -25,17 +25,12 @@ export const useMemosStore = defineStore('memos', () => {
   const getById = (id) => {
     return memos.value.find((memo) => memo.id === id)
   }
-  const startEdit = (id) => {
-    const memo = getById(id)
-    if (memo) memo.editing = true
-    console.log(memos.value)
-  }
+
   const finishEdit = () => {
-    console.log(memos.value)
     for (const memo of memos.value) {
       memo.editing = false
     }
   }
 
-  return { memos, update, remove, startEdit, finishEdit, getById }
+  return { memos, update, remove, finishEdit, getById }
 })

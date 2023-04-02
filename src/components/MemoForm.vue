@@ -10,7 +10,7 @@ const memosStore = useMemosStore()
 const content = ref('')
 const memo = memosStore.getById(props.id)
 if (memo) {
-  memosStore.startEdit(props.id)
+  memo.editing = true
   content.value = memo.content
 }
 
