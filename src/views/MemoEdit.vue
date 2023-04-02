@@ -6,8 +6,7 @@ const props = defineProps({ id: Number })
 </script>
 
 <template>
-  <MemoIndex /><br />
-  <MemoForm :id="props.id" /><br />
-  <br />
+  <MemoIndex />
+  <MemoForm :id="props.id" />
   <RouterLink :to="{ name: 'AppTop' }">トップに戻る</RouterLink><br />
 </template>

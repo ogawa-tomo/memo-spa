@@ -3,7 +3,6 @@ import MemoIndex from '@/components/MemoIndex.vue'
 </script>
 
 <template>
-  <MemoIndex /><br />
-  <br />
+  <MemoIndex />
   <RouterLink :to="{ name: 'MemoNew' }">新規作成</RouterLink>
 </template>
