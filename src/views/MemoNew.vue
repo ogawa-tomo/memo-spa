@@ -4,7 +4,15 @@ import MemoForm from '../components/MemoForm.vue'
 </script>
 
 <template>
-  <MemoIndex />
-  <MemoForm />
+  <div class="flex">
+    <MemoIndex />
+    <MemoForm />
+  </div>
   <RouterLink :to="{ name: 'AppTop' }">トップに戻る</RouterLink><br />
 </template>
+
+<style scoped>
+/* div {
+  display: flex;
+} */
+</style>

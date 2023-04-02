@@ -29,11 +29,24 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <form @submit.prevent="onUpdate">
-    <textarea v-model="content"></textarea>
-    <button>登録</button>
-  </form>
-  <div v-if="props.id">
-    <button @click="onRemove">削除</button>
-  </div>
+  <main>
+    <form @submit.prevent="onUpdate">
+      <textarea v-model="content"></textarea>
+      <button>登録</button>
+    </form>
+    <div v-if="props.id">
+      <button @click="onRemove">削除</button>
+    </div>
+  </main>
 </template>
+
+<style scoped>
+main {
+  width: 390px;
+  margin-left: 10px;
+}
+textarea {
+  width: 100%;
+  height: 200px;
+}
+</style>
