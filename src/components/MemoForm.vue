@@ -12,6 +12,10 @@ const onUpdate = () => {
   content.value = ''
   router.push({ name: 'AppTop' })
 }
+const onRemove = () => {
+  memosStore.remove(props.id)
+  router.push({ name: 'AppTop' })
+}
 </script>
 
 <template>
@@ -22,4 +26,7 @@ const onUpdate = () => {
     <textarea v-model="content"></textarea>
     <button>登録</button>
   </form>
+  <div v-if="props.id">
+    <button @click="onRemove">削除</button>
+  </div>
 </template>
