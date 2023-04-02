@@ -21,6 +21,7 @@ const memos = computed(() => {
           </RouterLink>
         </span>
       </li>
+      <li><RouterLink :to="{ name: 'MemoNew' }" class="none-decoration">+</RouterLink></li>
     </ul>
   </main>
 </template>
@@ -30,5 +31,11 @@ main {
   width: 390px;
   margin-right: 10px;
   word-wrap: break-word;
+}
+ul {
+  list-style: none;
+}
+.none-decoration {
+  text-decoration: none;
 }
 </style>
