@@ -31,7 +31,7 @@ onBeforeUnmount(() => {
 <template>
   <main>
     <textarea v-model="content"></textarea>
-    <button @click="onUpdate" class="update">登録</button>
+    <button @click="onUpdate" class="update">保存</button>
     <span v-if="props.id">
       <button @click="onRemove" class="delete">削除</button>
     </span>
