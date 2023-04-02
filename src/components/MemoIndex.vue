@@ -14,10 +14,11 @@ const memos = computed(() => {
   メモ一覧コンポーネント<br />
   <ul>
     <li v-for="memo in memos" :key="memo.id">
-      {{ memo.content }}
+      <RouterLink :to="{ name: 'MemoEdit', params: { id: memo.id } }">
+        {{ memo.content }}
+      </RouterLink>
     </li>
   </ul>
 
   <RouterLink :to="{ name: 'MemoNew' }">新規作成</RouterLink><br />
-  <RouterLink :to="{ name: 'MemoEdit', params: { id: 3 } }">メモ3の編集</RouterLink><br />
 </template>
