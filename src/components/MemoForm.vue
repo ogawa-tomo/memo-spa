@@ -7,7 +7,7 @@ const router = useRouter()
 const props = defineProps({ id: Number })
 const memosStore = useMemosStore()
 
-const content = ref('')
+const content = ref(memosStore.editingContent)
 const memo = memosStore.getById(props.id)
 if (memo) {
   memo.editing = true
