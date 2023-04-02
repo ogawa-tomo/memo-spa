@@ -2,7 +2,6 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useMemosStore = defineStore('memos', () => {
-  const editingContent = ref('')
   class Memo {
     constructor(id, content) {
       this.id = id
@@ -52,5 +51,5 @@ export const useMemosStore = defineStore('memos', () => {
     localStorage.setItem('memos', JSON.stringify(memos.value))
   }
 
-  return { editingContent, memos, update, remove, finishEdit, getById }
+  return { memos, update, remove, finishEdit, getById }
 })
