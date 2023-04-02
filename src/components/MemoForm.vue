@@ -1,13 +1,16 @@
 <script setup>
 import { ref } from 'vue'
 import { useMemosStore } from '@/stores/memos'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const props = defineProps({ id: Number })
 const memosStore = useMemosStore()
 const content = ref('')
 const onUpdate = () => {
   memosStore.update(props.id, content.value)
   content.value = ''
+  router.push({ name: 'AppTop' })
 }
 </script>
 
