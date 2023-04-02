@@ -1,12 +1,19 @@
 <script setup>
-import { ref } from 'vue'
+import { onBeforeUnmount, ref } from 'vue'
 import { useMemosStore } from '@/stores/memos'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const props = defineProps({ id: Number })
 const memosStore = useMemosStore()
+
 const content = ref('')
+const memo = memosStore.getById(props.id)
+if (memo) {
+  memosStore.startEdit(props.id)
+  content.value = memo.content
+}
+
 const onUpdate = () => {
   memosStore.update(props.id, content.value)
   content.value = ''
@@ -16,6 +23,9 @@ const onRemove = () => {
   memosStore.remove(props.id)
   router.push({ name: 'AppTop' })
 }
+onBeforeUnmount(() => {
+  memosStore.finishEdit()
+})
 </script>
 
 <template>
