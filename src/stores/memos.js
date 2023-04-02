@@ -3,10 +3,17 @@ import { defineStore } from 'pinia'
 
 export const useMemosStore = defineStore('memos', () => {
   // const editingContent = ref("")
-  const memos = ref([
-    { id: 1, content: 'hogehoge', editing: false },
-    { id: 2, content: 'fugafuga', editing: false }
-  ])
+  class Memo {
+    constructor(id, content) {
+      this.id = id
+      this.content = content
+      this.editing = false
+    }
+    get firstLine() {
+      return this.content.split('\n')[0]
+    }
+  }
+  const memos = ref([new Memo(1, 'hogehoge'), new Memo(2, 'fugafuga')])
   const update = (id, content) => {
     if (id) {
       const memo = getById(id)
@@ -14,7 +21,7 @@ export const useMemosStore = defineStore('memos', () => {
       memo.editing = false
     } else {
       const id = memos.value.length === 0 ? 1 : Math.max(...memos.value.map((memo) => memo.id)) + 1
-      memos.value.push({ id: id, content: content, editing: false })
+      memos.value.push(new Memo(id, content))
     }
   }
   const remove = (id) => {
