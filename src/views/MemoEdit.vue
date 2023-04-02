@@ -6,9 +6,6 @@ const props = defineProps({ id: Number })
 </script>
 
 <template>
-  MemoEdit.vue<br />
-  id{{ props.id }}のメモ編集画面<br />
-  <br />
   <MemoIndex /><br />
   <MemoForm :id="props.id" /><br />
   <br />

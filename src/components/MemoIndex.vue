@@ -10,8 +10,6 @@ const memos = computed(() => {
 </script>
 
 <template>
-  MemoIndex.vue<br />
-  メモ一覧コンポーネント<br />
   <ul>
     <li v-for="memo in memos" :key="memo.id">
       <span v-if="memo.editing">{{ memo.firstLine }}</span>
